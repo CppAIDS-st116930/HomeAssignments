@@ -7,10 +7,10 @@ LDFLAGS =
 GTEST_LIBS = -lgtest -lgtest_main -pthread
 
 SRC = src/main.cpp src/weapon.cpp src/pilot.cpp src/transformer.cpp src/autobot.cpp src/decepticon.cpp src/minicon.cpp
-OBJ = $(SRC:src/%.cpp=obj/%.o)
+OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 TEST_SRC = tests/test_transformers.cpp src/weapon.cpp src/pilot.cpp src/transformer.cpp src/autobot.cpp src/decepticon.cpp src/minicon.cpp
-TEST_OBJ = $(TEST_SRC:%.cpp=obj/%.o)
+TEST_OBJ = $(TEST_SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 BIN_DIR = bin
 OBJ_DIR = obj
@@ -30,11 +30,7 @@ $(BIN_DIR)/$(TEST_PROJECT): $(TEST_OBJ)
 	@mkdir -p $(BIN_DIR)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(GTEST_LIBS)
 
-$(OBJ_DIR)/%.o: src/%.cpp
-	@mkdir -p $(dir $@)
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
-
-$(OBJ_DIR)/%.o: tests/%.cpp
+$(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
