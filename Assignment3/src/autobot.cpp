@@ -4,6 +4,8 @@
 
 #include "autobot.h"
 
+namespace tf {
+
 Autobot::Autobot(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon, unsigned int empathy, bool guardianMode)
     : Transformer(level, strength, fuel, weapon), _empathy(empathy), _guardianMode(guardianMode) {}
 
@@ -18,3 +20,5 @@ bool Autobot::isGuardianMode() const {
 void Autobot::rollOut() {
     return;
 }
+
+} // namespace tf

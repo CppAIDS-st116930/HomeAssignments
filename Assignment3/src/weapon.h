@@ -5,6 +5,8 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+namespace tf {
+
 class Weapon {
 public:
     Weapon(unsigned int damage, unsigned int ammo);
@@ -17,5 +19,7 @@ private:
     unsigned int _damage;
     unsigned int _ammo;
 };
+
+} // namespace tf
 
 #endif

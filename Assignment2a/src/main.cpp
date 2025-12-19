@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    reverse_file(argv[1], argv[2]);
+    filerev::reverse_file(argv[1], argv[2]);
     std::cout << "File reversed successfully." << std::endl;
 
     return 0;

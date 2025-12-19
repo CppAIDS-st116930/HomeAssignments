@@ -10,6 +10,8 @@
 #include "../src/weapon.h"
 #include "../src/pilot.h"
 
+using namespace tf;
+
 TEST(TransformerTest, Initialization) {
     Weapon w(50, 10);
     Transformer t(1, 100, 50, w);

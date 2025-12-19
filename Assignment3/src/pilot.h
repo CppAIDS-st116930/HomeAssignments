@@ -7,6 +7,8 @@
 
 #include <string>
 
+namespace tf {
+
 class Pilot {
 public:
     Pilot(const std::string& name);
@@ -16,5 +18,7 @@ public:
 private:
     std::string _name;
 };
+
+} // namespace tf
 
 #endif

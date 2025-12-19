@@ -4,6 +4,8 @@
 
 #include "decepticon.h"
 
+namespace tf {
+
 Decepticon::Decepticon(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon, unsigned int malice, bool stealthMode)
     : Transformer(level, strength, fuel, weapon), _malice(malice), _stealthMode(stealthMode) {}
 
@@ -18,3 +20,5 @@ bool Decepticon::isStealthMode() const {
 void Decepticon::scheme() {
     return;
 }
+
+} // namespace tf

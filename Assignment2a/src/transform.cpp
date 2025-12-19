@@ -6,6 +6,8 @@
 #include <iostream>
 #include <fstream>
 
+namespace filerev {
+
 void reverse_file(const char* input_path, const char* output_path) {
     std::ifstream in(input_path, std::ios::binary | std::ios::ate);
     if (!in) {
@@ -45,3 +47,5 @@ void reverse_file(const char* input_path, const char* output_path) {
     out.close();
     delete[] buffer;
 }
+
+} // namespace filerev

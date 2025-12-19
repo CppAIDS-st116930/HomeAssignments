@@ -7,6 +7,8 @@
 
 #include "transformer.h"
 
+namespace tf {
+
 class MiniCon : public Transformer {
 public:
     MiniCon(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon, unsigned int sizeClass, bool isLinked);
@@ -19,5 +21,7 @@ private:
     unsigned int _sizeClass;
     bool _isLinked;
 };
+
+} // namespace tf
 
 #endif

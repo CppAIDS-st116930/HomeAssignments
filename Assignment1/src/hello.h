@@ -7,8 +7,12 @@
 
 #include <string>
 
+namespace hello {
+
 void hello_world();
 void hello_user(const std::string& name);
 void hello_loop();
+
+} // namespace hello
 
 #endif

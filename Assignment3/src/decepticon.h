@@ -7,6 +7,8 @@
 
 #include "transformer.h"
 
+namespace tf {
+
 class Decepticon : public Transformer {
 public:
     Decepticon(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon, unsigned int malice, bool stealthMode);
@@ -19,5 +21,7 @@ private:
     unsigned int _malice;
     bool _stealthMode;
 };
+
+} // namespace tf
 
 #endif

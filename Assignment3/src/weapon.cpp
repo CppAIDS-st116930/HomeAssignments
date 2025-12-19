@@ -4,6 +4,8 @@
 
 #include "weapon.h"
 
+namespace tf {
+
 Weapon::Weapon(unsigned int damage, unsigned int ammo) : _damage(damage), _ammo(ammo) {}
 
 unsigned int Weapon::getDamage() const {
@@ -23,3 +25,5 @@ void Weapon::fire() {
 void Weapon::reload(unsigned int ammo) {
     _ammo += ammo;
 }
+
+} // namespace tf

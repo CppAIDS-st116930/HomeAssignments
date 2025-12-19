@@ -7,6 +7,10 @@
 
 #include <string>
 
+namespace rpncalc {
+
 double evaluate_rpn(const std::string& expression);
+
+} // namespace rpncalc
 
 #endif

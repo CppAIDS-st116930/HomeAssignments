@@ -7,8 +7,8 @@
 #include "hello.h"
 
 int main() {
-    hello_world();
-    hello_loop();
+    hello::hello_world();
+    hello::hello_loop();
 
     return 0;
 }

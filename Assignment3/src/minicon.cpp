@@ -4,6 +4,8 @@
 
 #include "minicon.h"
 
+namespace tf {
+
 MiniCon::MiniCon(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon, unsigned int sizeClass, bool isLinked)
     : Transformer(level, strength, fuel, weapon), _sizeClass(sizeClass), _isLinked(isLinked) {}
 
@@ -18,3 +20,5 @@ bool MiniCon::isLinked() const {
 void MiniCon::powerLink() {
     _isLinked = !_isLinked;
 }
+
+} // namespace tf

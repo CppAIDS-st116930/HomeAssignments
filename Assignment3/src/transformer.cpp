@@ -4,6 +4,8 @@
 
 #include "transformer.h"
 
+namespace tf {
+
 Transformer::Transformer(unsigned int level, unsigned int strength, unsigned int fuel, const Weapon& weapon)
     : _level(level), _strength(strength), _fuel(fuel), _weapon(weapon), _pilot(nullptr) {}
 
@@ -45,3 +47,25 @@ bool Transformer::fire() {
     _weapon.fire();
     return true;
 }
+
+void Transformer::setLevel(unsigned int level) {
+    _level = level;
+}
+
+void Transformer::setStrength(unsigned int strength) {
+    _strength = strength;
+}
+
+void Transformer::setFuel(unsigned int fuel) {
+    _fuel = fuel;
+}
+
+Weapon& Transformer::getWeapon() {
+    return _weapon;
+}
+
+const Weapon& Transformer::getWeapon() const {
+    return _weapon;
+}
+
+} // namespace tf

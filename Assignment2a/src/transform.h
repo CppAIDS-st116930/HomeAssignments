@@ -7,6 +7,10 @@
 
 #include <fstream>
 
+namespace filerev {
+
 void reverse_file(const char* input_path, const char* output_path);
+
+} // namespace filerev
 
 #endif

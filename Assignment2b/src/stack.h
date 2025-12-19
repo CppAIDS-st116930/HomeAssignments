@@ -7,10 +7,18 @@
 
 #include <cstddef>
 
+namespace rpncalc {
+
 class Stack {
 public:
     Stack();
     ~Stack();
+    
+    // Rule of Three: copy operations (using copy-and-swap idiom)
+    Stack(const Stack& other);
+    Stack& operator=(Stack other);
+    
+    friend void swap(Stack& a, Stack& b) noexcept;
 
     void push(double value);
     double pop();
@@ -25,5 +33,7 @@ private:
     
     void resize();
 };
+
+} // namespace rpncalc
 
 #endif

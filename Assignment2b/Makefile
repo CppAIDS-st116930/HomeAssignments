@@ -30,7 +30,7 @@ $(BIN_DIR)/$(TEST_PROJECT): $(TEST_OBJ)
 	@mkdir -p $(BIN_DIR)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(GTEST_LIBS)
 
-$(OBJ_DIR)/%.o: %.cpp
+$(OBJ_DIR)/%.o: src/%.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 

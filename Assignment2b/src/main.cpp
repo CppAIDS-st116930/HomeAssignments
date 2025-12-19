@@ -13,7 +13,7 @@ int main() {
         if (line == "exit") break;
         if (line.empty()) continue;
         try {
-            double result = evaluate_rpn(line);
+            double result = rpncalc::evaluate_rpn(line);
             std::cout << "Result: " << result << std::endl;
         } catch (const std::exception& e) {
             std::cerr << "Error: " << e.what() << std::endl;

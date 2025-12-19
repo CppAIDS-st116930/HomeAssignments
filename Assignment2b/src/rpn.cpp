@@ -7,6 +7,8 @@
 #include <sstream>
 #include <stdexcept>
 
+namespace rpncalc {
+
 double evaluate_rpn(const std::string& expression) {
     Stack stack;
     std::stringstream ss(expression);
@@ -38,3 +40,5 @@ double evaluate_rpn(const std::string& expression) {
 
     return stack.pop();
 }
+
+} // namespace rpncalc
