@@ -9,6 +9,9 @@
 #include <stdexcept>
 #include <algorithm>
 
+namespace mtx
+{
+
 template <typename T>
 class Matrix
 {
@@ -54,8 +57,14 @@ public:
     }
 
     // Accessors
-    size_t getRows() const { return _rows; }
-    size_t getCols() const { return _cols; }
+    size_t getRows() const
+    {
+        return _rows;
+    }
+    size_t getCols() const
+    {
+        return _cols;
+    }
 
     T& operator()(size_t r, size_t c)
     {
@@ -90,7 +99,7 @@ public:
         return result;
     }
 
-    // Scalar Multiplication
+    // Scalar Multiplication (matrix * scalar)
     Matrix operator*(const T& scalar) const
     {
         Matrix result(_rows, _cols);
@@ -168,5 +177,14 @@ private:
     size_t _cols;
     T* _data;
 };
+
+// Scalar Multiplication (scalar * matrix) - free function for left multiplication
+template <typename T>
+Matrix<T> operator*(const T& scalar, const Matrix<T>& m)
+{
+    return m * scalar;
+}
+
+} // namespace mtx
 
 #endif
