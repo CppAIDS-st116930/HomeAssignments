@@ -7,6 +7,9 @@
 #include <stdexcept>
 #include <cmath>
 
+namespace mtx
+{
+
 Rational::Rational(int num, int denom) : _num(num), _denom(denom)
 {
     if (_denom == 0)
@@ -67,7 +70,7 @@ bool Rational::operator!=(const Rational& other) const
 
 bool Rational::operator<(const Rational& other) const
 {
-    return (_num * other._denom) < (other._num * _denom); 
+    return (_num * other._denom) < (other._num * _denom);
 }
 
 void Rational::simplify()
@@ -101,3 +104,5 @@ std::ostream& operator<<(std::ostream& os, const Rational& r)
     }
     return os;
 }
+
+} // namespace mtx
